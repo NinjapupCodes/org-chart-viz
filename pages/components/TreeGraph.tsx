@@ -20,6 +20,7 @@ import { HierarchyPointNode } from "@visx/hierarchy/lib/types";
 const rawTree: TreeNode = treeData as unknown as TreeNode;
 
 const chooseLinkComponent = (isHorizontal: boolean) =>
+  //@ts-ignore
   !isHorizontal ? LinkVertical : LinkHorizontal;
 
 const conditionalReverse = (arr: any[], cond: boolean) => {
@@ -110,7 +111,12 @@ const TreeGraph = ({
                 >
                   <Tree<TreeNode>
                     root={data}
-                    nodeSize={conditionalReverse(nodeSize, isHorizontal)}
+                    nodeSize={
+                      conditionalReverse(nodeSize, isHorizontal) as [
+                        number,
+                        number
+                      ]
+                    }
                   >
                     {(tree) => {
                       return (
@@ -127,14 +133,17 @@ const TreeGraph = ({
                                 : { x: yMax / 2, y: xMax / 2 }
                             }
                             centeredAt={{
-                              //@ts-ignore
                               x: isHorizontal
-                                ? foundNode?.y ?? 0
-                                : foundNode?.x ?? 0,
+                                ? //@ts-ignore
+                                  foundNode?.y ?? 0
+                                : //@ts-ignore
+                                  foundNode?.x ?? 0,
                               //@ts-ignore
                               y: isHorizontal
-                                ? foundNode?.x ?? 0
-                                : foundNode?.y ?? 0,
+                                ? //@ts-ignore
+                                  foundNode?.x ?? 0
+                                : //@ts-ignore
+                                  foundNode?.y ?? 0,
                             }}
                           />
 
@@ -190,7 +199,7 @@ const TreeGraph = ({
           );
         }}
       </ParentSize>
-      <Drawer show={selected} node={selected} />
+      <Drawer node={selected} />
     </>
   );
 };

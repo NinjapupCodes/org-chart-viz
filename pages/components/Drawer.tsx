@@ -2,14 +2,8 @@ import { HierarchyPointNode } from "@visx/hierarchy/lib/types";
 import React from "react";
 import { TreeNode } from "../types";
 
-const Drawer = ({
-  show,
-  node,
-}: {
-  show: boolean;
-  node?: HierarchyPointNode<TreeNode> | null;
-}) => {
-  if (!show || !node) return null;
+const Drawer = ({ node }: { node?: HierarchyPointNode<TreeNode> | null }) => {
+  if (!node) return null;
 
   return (
     <div className="h-screen fixed right-0 top-0 w-[30rem] bg-orange-50 z-10 p-4 flex flex-col gap-4 shadow-lg overflow-auto">
