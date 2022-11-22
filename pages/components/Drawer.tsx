@@ -12,7 +12,7 @@ const Drawer = ({
   if (!show || !node) return null;
 
   return (
-    <div className="h-screen fixed right-0 top-0 w-[30rem] bg-orange-50 z-10 p-4 flex flex-col gap-4 shadow-lg">
+    <div className="h-screen fixed right-0 top-0 w-[30rem] bg-orange-50 z-10 p-4 flex flex-col gap-4 shadow-lg overflow-auto">
       <h1 className="text-3xl font-semibold">{node.data.name}</h1>
       <div>
         <p className="text-xl font-medium">
