@@ -1,7 +1,7 @@
 import { ProvidedZoom } from "@visx/zoom/lib/types.d";
 import { useEffect } from "react";
 import { useSpring } from "framer-motion";
-import { springConfig } from "../hooks/utils";
+import { springConfig } from "../../hooks/utils";
 
 type Point = {
   x: number;

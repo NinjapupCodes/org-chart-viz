@@ -27,3 +27,5 @@ export const DataContextProvider = ({
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 export const useData = () => useContext(Context);
+
+export default DataContextProvider;

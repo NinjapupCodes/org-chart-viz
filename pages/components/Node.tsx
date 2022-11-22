@@ -1,4 +1,4 @@
-import { HierarchyNode } from "../types";
+import { HierarchyNode } from "../../types";
 import cn from "classnames";
 import { motion } from "framer-motion";
 import { Text } from "@visx/text";
@@ -123,9 +123,11 @@ const Node = ({
       >
         {node.data.childrenCount}
       </Text>
-      <motion.g style={{ x: -14 * 3, y: 16 }}>
-        <Members members={node.data.members} />
-      </motion.g>
+      {node.data.members && (
+        <motion.g style={{ x: -14 * 3, y: 16 }}>
+          <Members members={node.data.members} />
+        </motion.g>
+      )}
     </motion.g>
   );
 };

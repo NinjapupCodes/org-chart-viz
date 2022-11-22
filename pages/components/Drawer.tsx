@@ -1,6 +1,6 @@
 import { HierarchyPointNode } from "@visx/hierarchy/lib/types";
 import React from "react";
-import { TreeNode } from "../types";
+import { TreeNode } from "../../types";
 
 const Drawer = ({ node }: { node?: HierarchyPointNode<TreeNode> | null }) => {
   if (!node) return null;

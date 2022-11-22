@@ -1,4 +1,4 @@
-import { Member } from "../types/index";
+import { Member } from "../../types/index";
 import React, { useMemo } from "react";
 import { Text } from "@visx/text";
 import { motion } from "framer-motion";
